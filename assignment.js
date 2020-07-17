@@ -38,20 +38,22 @@ var output3 = brickCalculator(45);
 console.log(output3)
 
 
-function tinyFriend(name)                                        
-{
- 
- var min =name[0];                                        
- for(var i=0;i<=name.length;i++)
- {  var element = name[i];
-    if(element < min)
-    {
-        min = element;
+
+function tinyFriend(arr) {
+    let shortLength = Infinity;
+    let shortest = "";
+
+    if (arr.length > 0) {
+        for (let i = 0; i < arr.length; i++) {
+            if (typeof arr[i] === 'string' && arr[i].length < shortLength) {
+                shortest = arr[i];
+                shortLength = arr[i].length;
+            }
+        }
     }
 
- }
- return min;
-
+    return shortest;
 }
-var output4 = tinyFriend([23,22,45,211]);                         
+
+var output4 = tinyFriend(['samira', 'karina','ching', 'Rahul']);
 console.log(output4);
